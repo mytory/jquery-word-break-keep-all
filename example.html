@@ -49,6 +49,7 @@ $(document).ready(function(){
 		<ul>
 			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 display: inline 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
 			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> 태그로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
+			<li>적용시키려고 하는 요소 안에는 html이 있어선 안 된다. 오직 text만 있는 요소여야 제대로 작동한다.</li>
 			<li>저작권 정보 : jQuery word-break keep-all Plugin,
 http://mytory.co.kr,
 Copyright 2011, Ahn Hyoung-woo,
