@@ -1,5 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
+ * ver 1.0
  * http://mytory.co.kr
  *
  * Copyright 2011, Ahn Hyoung-woo
