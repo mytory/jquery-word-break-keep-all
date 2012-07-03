@@ -41,27 +41,9 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-	<h1>jQuery word-break: keep-all 플러그인 ver 1.0</h1>
-	<div class="desc">
-		<div class="author">
-			제작: 안형우(mytory@gmail.com)
-		</div>
-		<ul>
-			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 display: inline 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
-			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> 태그로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
-			<li>적용시키려고 하는 요소 안에는 html이 있어선 안 된다. 오직 text만 있는 요소여야 제대로 작동한다.</li>
-			<li>저작권 정보 : jQuery word-break keep-all Plugin,
-http://mytory.co.kr,
-Copyright 2011, Ahn Hyoung-woo,
-Dual licensed under the MIT or GPL Version 2 licenses,
-http://jquery.org/license,
-Date: 2012-07-02</li>
-			<li>아래 버튼을 이용해 가로를 50px씩 늘리고 줄이면서 단어별로 끊어지는지 테스트해 보세요.</li>
-		</ul>
-		<h2>실행 방법 How to Run</h2>
-		<pre class="brush:js">$('.test').wordBreakKeepAll();</pre>
-	</div>
+	<h1>jQuery word-break: keep-all 플러그인 ver 1.0 Demo</h1>
 	<div class="buttons">
+		<p>아래 버튼을 이용해 가로를 50px씩 늘리고 줄이면서 단어별로 끊어지는지 테스트해 보세요.</p>
 		<input type="button" value="+50px" id="plus"/>
 		<input type="button" value="-50px" id="minus"/>
 	</div>
@@ -89,6 +71,25 @@ Date: 2012-07-02</li>
 			<li>이것은 li 태그로 둘러싼 것입니다. 이것은 li 태그로 둘러싼 것입니다.</li>
 		</ul>
 	</div>
+	<div class="desc">
+		<h2>플러그인 설명</h2>
+		<div class="author">
+			제작: 안형우(mytory@gmail.com)
+		</div>
+		<ul>
+			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 display: inline 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
+			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> 태그로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
+			<li>적용시키려고 하는 요소 안에는 html이 있어선 안 된다. 오직 text만 있는 요소여야 제대로 작동한다.</li>
+			<li>저작권 정보 : 
+Copyright 2011, Ahn Hyoung-woo,
+Dual licensed under the MIT or GPL Version 2 licenses(상업용, 개인용 무료),
+http://jquery.org/license,
+Date: 2012-07-02</li>
+		</ul>
+		<h2>실행 방법 How to Run</h2>
+		<pre class="brush:js">$('.test').wordBreakKeepAll();</pre>
+	</div>
+	
 	<script type="text/javascript">
 	$('.test-box').animate({'width': '400px'},5000);
 	$('#plus').click(function(){

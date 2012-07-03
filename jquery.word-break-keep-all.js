@@ -1,9 +1,9 @@
 /*!
  * jQuery word-break keep-all Plugin
  * ver 1.0
- * http://mytory.co.kr
+ * http://code.google.com/p/jquery-word-break-keep-all-plugin/
  *
- * Copyright 2011, Ahn Hyoung-woo
+ * Copyright 2011, Ahn Hyoung-woo (mytory@gmail.com / http://mytory.co.kr)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -27,13 +27,14 @@ jQuery.fn.wordBreakKeepAll = function() {
 				var textArr = $(obj).text().split(' ');
 				$(obj).text('');
 				for(var i=0,j=textArr.length; i<j; i++){
-				  	$('<span/>',{
+				  	
+					$('<span/>',{
 						'text': textArr[i],
 						'style': 'white-space: nowrap;'
 					}).appendTo($(obj));
 					$(obj).html($(obj).html()+' ');
-				};
 				
+				};
 			}
 		};
 	}
