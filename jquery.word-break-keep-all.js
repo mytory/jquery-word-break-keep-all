@@ -1,14 +1,17 @@
 /*!
  * jQuery word-break keep-all Plugin
  * ver 1.0
- * http://code.google.com/p/jquery-word-break-keep-all-plugin/
  *
- * Copyright 2011, Ahn Hyoung-woo (mytory@gmail.com / http://mytory.co.kr)
+ * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
- * Date: 2012-07-02
+ * http://code.google.com/p/jquery-word-break-keep-all-plugin/
+ * http://mytory.co.kr/archives/2801
+ *
+ * Date: 2012-07-04
  */
+
 jQuery.fn.wordBreakKeepAll = function() {
 	if( /MSIE/.test(navigator.userAgent) ){
 		var addWordBreakKeepAll = function(obj){

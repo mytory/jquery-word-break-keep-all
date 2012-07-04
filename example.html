@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, minimum-scale=1.0, user-scalable=yes" />
 <meta charset="UTF-8">
 <title>jQuery word-break:keep-all Plugin</title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
@@ -12,32 +13,41 @@ $(document).ready(function(){
 });
 </script>
 <style type="text/css">
-	body{
-		text-align: center;
-	}
-	.test-box{
-		width: 120px;
-		padding: 20px;
-		border: 2px solid #ddd;
-		text-align: left;
-		display: inline-block;
-		vertical-align: top;
-	}
-	.buttons{
-		margin: 50px;
-	}
-	.desc{
-		width: 600px;
-		margin: 50px auto;
-		text-align: left;
-	}
-	.copyright{
-		font-size: 12px;
-		color: #666;
-	}
-	.author{
-		text-align: right;
-	}
+body{
+	text-align: center;
+}
+.test-box{
+	width: 120px;
+	padding: 20px;
+	border: 2px solid #ddd;
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+.buttons{
+	margin: 50px;
+}
+.desc{
+	width: 600px;
+	margin: 50px auto;
+	text-align: left;
+}
+.copyright{
+	font-size: 12px;
+	color: #666;
+}
+.author{
+	text-align: right;
+}
+pre{
+	color: #666;
+}
+pre strong{
+	color: #000;
+}
+ul{
+	padding-left: 25px;
+}
 </style>
 </head>
 <body>
@@ -48,49 +58,56 @@ $(document).ready(function(){
 		<input type="button" value="-50px" id="minus"/>
 	</div>
 	<div class="test-box">
-		<h2>플러그인 적용</h2>
-		<p>Test target is vary tags.</p>
-		<span class="test">이것은 span 태그로 둘러싼 것입니다. 이것은 span 태그로 둘러싼 것입니다.</span>
-		<div class="test">이것은 div 태그로 둘러싼 것입니다. 이것은 div 태그로 둘러싼 것입니다.</div>
-		<h3 class="test">이것은 h3 태그로 둘러싼 것입니다. 이것은 h3 태그로 둘러싼 것입니다.</h3>
-		<p class="test">이것은 p 태그로 둘러싼 것입니다. 이것은 p 태그로 둘러싼 것입니다.</p>
-		<a class="test" href="#">이것은 a 태그로 둘러싼 것입니다. 이것은 a 태그로 둘러싼 것입니다.</a>
+		<h2 class="test">플러그인 적용 (applied)</h2>
+		<p class="test">다양한 태그에 테스트해 본 것입니다. Test target is vary tags.</p>
+		<span class="test">이것은 span tag로 둘러싼 것입니다. 이것은 span tag로 둘러싼 것입니다.</span>
+		<div class="test">이것은 div tag로 둘러싼 것입니다. 이것은 div tag로 둘러싼 것입니다.</div>
+		<h3 class="test">이것은 h3 tag로 둘러싼 것입니다. 이것은 h3 tag로 둘러싼 것입니다.</h3>
+		<p class="test">이것은 p tag로 둘러싼 것입니다. 이것은 p tag로 둘러싼 것입니다.</p>
+		<a class="test" href="#">이것은 a tag로 둘러싼 것입니다. 이것은 a tag로 둘러싼 것입니다.</a>
 		<ul>
-			<li class="test">이것은 li 태그로 둘러싼 것입니다. 이것은 li 태그로 둘러싼 것입니다.</li>
+			<li class="test">이것은 li tag로 둘러싼 것입니다. 이것은 li tag로 둘러싼 것입니다.</li>
 		</ul>
 	</div>
 	<div class="test-box">
-		<h2>플러그인 미적용</h2>
-		<p>Test target is vary tags.</p>
-		<span>이것은 span 태그로 둘러싼 것입니다. 이것은 span 태그로 둘러싼 것입니다.</span>
-		<div>이것은 div 태그로 둘러싼 것입니다. 이것은 div 태그로 둘러싼 것입니다.</div>
-		<h3>이것은 h3 태그로 둘러싼 것입니다. 이것은 h3 태그로 둘러싼 것입니다.</h3>
-		<p>이것은 p 태그로 둘러싼 것입니다. 이것은 p 태그로 둘러싼 것입니다.</p>
-		<a href="#">이것은 a 태그로 둘러싼 것입니다. 이것은 a 태그로 둘러싼 것입니다.</a>
+		<h2>플러그인 미적용 (not apply)</h2>
+		<p>다양한 태그에 테스트해 본 것입니다. Test target is vary tags.</p>
+		<span>이것은 span tag로 둘러싼 것입니다. 이것은 span tag로 둘러싼 것입니다.</span>
+		<div>이것은 div tag로 둘러싼 것입니다. 이것은 div tag로 둘러싼 것입니다.</div>
+		<h3>이것은 h3 tag로 둘러싼 것입니다. 이것은 h3 tag로 둘러싼 것입니다.</h3>
+		<p>이것은 p tag로 둘러싼 것입니다. 이것은 p tag로 둘러싼 것입니다.</p>
+		<a href="#">이것은 a tag로 둘러싼 것입니다. 이것은 a tag로 둘러싼 것입니다.</a>
 		<ul>
-			<li>이것은 li 태그로 둘러싼 것입니다. 이것은 li 태그로 둘러싼 것입니다.</li>
+			<li>이것은 li tag로 둘러싼 것입니다. 이것은 li tag로 둘러싼 것입니다.</li>
 		</ul>
 	</div>
 	<div class="desc">
+		<h2>실행 방법 How to Run</h2>
+		<pre>&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="<strong>jquery.word-break-keep-all.js</strong>"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$(document).ready(function(){
+	<strong>$('.test').wordBreakKeepAll();</strong>
+});
+&lt;/script&gt;</pre>
 		<h2>플러그인 설명</h2>
 		<div class="author">
-			제작: 안형우(mytory@gmail.com)
+			제작: 안형우
+			<br>
+			문의: mytory@gmail.com
 		</div>
 		<ul>
-			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 display: inline 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
-			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> 태그로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
+			<li><a href="http://mytory.co.kr/archives/2801">jQuery word-break: keep-all 플러그인 제작동기와 코드 CSS 원리 설명</a>은 블로그에 있습니다.</li>
+			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 <code>display: inline</code> 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
+			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> tag로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
 			<li>적용시키려고 하는 요소 안에는 html이 있어선 안 된다. 오직 text만 있는 요소여야 제대로 작동한다.</li>
-			<li>저작권 정보 : 
-Copyright 2011, Ahn Hyoung-woo,
-Dual licensed under the MIT or GPL Version 2 licenses(상업용, 개인용 무료),
-http://jquery.org/license,
-Date: 2012-07-02</li>
+			<li>저작권은 jQuery와 같습니다. (카피라이트 헤더에만 손대지 않으면 상업용·개인용 다 무료) <a href="http://jquery.org/license">http://jquery.org/license</a></li>
+			<li><a href="http://code.google.com/p/jquery-word-break-keep-all-plugin/">프로젝트 홈(구글 코드)</a></li>
 		</ul>
-		<h2>실행 방법 How to Run</h2>
-		<pre class="brush:js">$('.test').wordBreakKeepAll();</pre>
 	</div>
 	
 	<script type="text/javascript">
+	//for example
 	$('.test-box').animate({'width': '400px'},5000);
 	$('#plus').click(function(){
 		$('.test-box').animate({'width': '+=50'},1000);
@@ -98,7 +115,7 @@ Date: 2012-07-02</li>
 	$('#minus').click(function(){
 		$('.test-box').animate({'width': '-=50'},1000);
 	});
-	$('a').click(function(){
+	$('.test-box a').click(function(){
 		return false;
 	});
 	</script>
