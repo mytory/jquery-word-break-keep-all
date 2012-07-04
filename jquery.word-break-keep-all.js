@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.0
+ * ver 1.02
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -17,14 +17,18 @@ jQuery.fn.wordBreakKeepAll = function() {
 		var addWordBreakKeepAll = function(obj){
 			$(obj).css({
 				'word-break': 'keep-all',
-				'word-wrap': 'break-word',	
-				'display': 'block'
+				'word-wrap': 'break-word'
 			});
+			if($(obj).css('display') == 'inline'){
+				$(obj).css('display','block');
+			}
 		};
 	}else{
 		var addWordBreakKeepAll = function(obj){
 			if($(obj).html() != $(obj).text()){
-				alert('요소 안에 텍스트만 있어야 제대로 작동합니다.');
+				if (typeof window.console != 'undefined' && typeof window.console.log != 'undefined') {
+					console.log('대상이 된 요소 안에 텍스트만 있어야 제대로 작동합니다.');
+				}
 				return false;
 			}else{
 				var textArr = $(obj).text().split(' ');
