@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.02
+ * ver 1.12
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -9,18 +9,26 @@
  * http://code.google.com/p/jquery-word-break-keep-all-plugin/
  * http://mytory.co.kr/archives/2801
  *
- * Date: 2012-07-04
+ * Date: 2012-08-07
  */
 
-jQuery.fn.wordBreakKeepAll = function() {
+jQuery.fn.wordBreakKeepAll = function(option) {
+	var defaultOption = {
+		OffForIE: false // If IE, turn off plugin.
+	};
+
+	var opt = $.extend(defaultOption,option);
+
 	if( /MSIE/.test(navigator.userAgent) ){
 		var addWordBreakKeepAll = function(obj){
-			$(obj).css({
-				'word-break': 'keep-all',
-				'word-wrap': 'break-word'
-			});
-			if($(obj).css('display') == 'inline'){
-				$(obj).css('display','block');
+			if(opt.OffForIE == false){
+				$(obj).css({
+					'word-break': 'keep-all',
+					'word-wrap': 'break-word'
+				});
+				if($(obj).css('display') == 'inline'){
+					$(obj).css('display','block');
+				}
 			}
 		};
 	}else{

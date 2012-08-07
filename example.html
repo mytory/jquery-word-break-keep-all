@@ -9,6 +9,9 @@
 $(document).ready(function(){
 	//이 한 줄로 실행한다.
 	$('.test').wordBreakKeepAll();
+
+	//IE에서는 플러그인을 사용하지 않고 CSS로 처리하고 싶은 경우 이렇게 옵션을 주면 된다.
+	//$('.test').wordBreakKeepAll({OffForIE:true}); 
 });
 </script>
 <style type="text/css">
