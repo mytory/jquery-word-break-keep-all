@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.12
+ * ver 1.13
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -9,7 +9,7 @@
  * http://code.google.com/p/jquery-word-break-keep-all-plugin/
  * http://mytory.co.kr/archives/2801
  *
- * Date: 2012-08-07
+ * Date: 2013-01-05
  */
 
 jQuery.fn.wordBreakKeepAll = function(option) {
