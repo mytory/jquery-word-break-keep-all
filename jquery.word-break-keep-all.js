@@ -38,7 +38,6 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 			// .html() 로 집어 넣었을 때, 여는 태그만 있으면 브라우저가 자동으로 닫는 태그를 집어 넣기 때문에 <,>를 다 없앤다.
 			html = html.replace(/\</g,'☆§┡【').replace(/\>/g,'】┪§☆');
 			var textArr = html.split(' ');
-			console.log(textArr);
 			//빈 배열 제거
 			textArr = textArr.filter(function(e){return e;});
 			$(obj).text('');
@@ -62,10 +61,8 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 						'style': 'white-space: nowrap;'
 					}).appendTo($(obj));
 					
-					log(textArr[i],'done');
 				}else{
 					$(obj).append(textArr[i]);
-					log(textArr[i],'skip');
 				}
 
 				$(obj).html($(obj).html()+' ');
@@ -78,7 +75,6 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 				}
 			};
 			var finalHTML = $(obj).html();
-			console.log(finalHTML);
 			$(obj).html(finalHTML.replace(/☆§┡【/g,'<').replace(/】┪§☆/g,'>'));
 		};
 	}
@@ -86,14 +82,6 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 		addWordBreakKeepAll(this);
 	});
 };
-
-function log(str, echo){
-	if(str.indexOf('실행') > -1 || str.indexOf('방법') > -1){
-		console.log(str, str.lastIndexOf('☆§┡【'), str.lastIndexOf('】┪§☆'));
-		console.log(echo);
-	}
-}
-
 
 function is_tag_closed(str){
 	return str.lastIndexOf('☆§┡【') < str.lastIndexOf('】┪§☆');
