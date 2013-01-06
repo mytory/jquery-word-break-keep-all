@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.2
+ * ver 1.2.1
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -9,7 +9,7 @@
  * http://code.google.com/p/jquery-word-break-keep-all-plugin/
  * http://mytory.co.kr/archives/2801
  *
- * Date: 2013-01-05
+ * Date: 2013-01-07
  */
 
 jQuery.fn.wordBreakKeepAll = function(option) {
@@ -35,15 +35,19 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 		var addWordBreakKeepAll = function(obj){
 			
 			var html = $(obj).html();
+			//줄바꿈 보존을 위한 처리
+			html = html.replace(/(\r\n|\n|\r)/gm, '<<<<<>>>>>');
 			// .html() 로 집어 넣었을 때, 여는 태그만 있으면 브라우저가 자동으로 닫는 태그를 집어 넣기 때문에 <,>를 다 없앤다.
-			html = html.replace(/\</g,'☆§┡【').replace(/\>/g,'】┪§☆');
 			var textArr = html.split(' ');
 			//빈 배열 제거
 			textArr = textArr.filter(function(e){return e;});
 			$(obj).text('');
 			var skip = false;
+			var full_str = '';
 			
 			for(var i=0,j=textArr.length; i<j; i++){
+				var str = textArr[i];
+				
 				/*
 				 * 태그가 닫히고 끝났으면 일단 이놈은 적용하지 않고 다음 놈부터 skip = false;
 				 * 태그가 열리고 끝났으면 skip = true;
@@ -55,27 +59,20 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 				 * skip = true 로 변경하는 경우 : 지금 태그가 열린 경우
 				 * skip = false 로 변경하는 경우 : 지금 태그가 닫힌 경우
 				 */
-				if(skip == false && is_no_tag(textArr[i])){
-					$('<span/>',{
-						'html': textArr[i],
-						'style': 'white-space: nowrap;'
-					}).appendTo($(obj));
-					
+				if(skip == false && is_there_no_angle_bracket(str)){
+					full_str += '<span style="white-space: nowrap">'+str+'</span> ';
 				}else{
-					$(obj).append(textArr[i]);
+					full_str += str + ' ';
 				}
-
-				$(obj).html($(obj).html()+' ');
 				
-				if(is_tag_opend(textArr[i])){
+				if(is_there_start_angle_bracket(str)){
 					skip = true;
 				}
-				if(is_tag_closed(textArr[i])){
+				if(is_there_end_angle_bracket(str)){
 					skip = false;
 				}
 			};
-			var finalHTML = $(obj).html();
-			$(obj).html(finalHTML.replace(/☆§┡【/g,'<').replace(/】┪§☆/g,'>'));
+			$(obj).html(full_str.replace(/<<<<<>>>>>/g, "\n"));
 		};
 	}
 	return this.each(function(){
@@ -83,15 +80,15 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 	});
 };
 
-function is_tag_closed(str){
-	return str.lastIndexOf('☆§┡【') < str.lastIndexOf('】┪§☆');
+function is_there_end_angle_bracket(str){
+	return str.lastIndexOf('<') < str.lastIndexOf('>');
 }
 
-function is_tag_opend(str){
-	return str.lastIndexOf('】┪§☆') < str.lastIndexOf('☆§┡【');
+function is_there_start_angle_bracket(str){
+	return str.lastIndexOf('>') < str.lastIndexOf('<');
 }
 
-function is_no_tag(str){
+function is_there_no_angle_bracket(str){
 	//only -1
-	return str.lastIndexOf('】┪§☆') == str.lastIndexOf('☆§┡【');
+	return str.lastIndexOf('>') == str.lastIndexOf('<');
 }
