@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.13
+ * ver 1.2
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
