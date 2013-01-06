@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.2.1
+ * ver 1.2.2
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -13,6 +13,19 @@
  */
 
 jQuery.fn.wordBreakKeepAll = function(option) {
+	var is_there_end_angle_bracket = function(str){
+		return str.lastIndexOf('<') < str.lastIndexOf('>');
+	};
+
+	var is_there_start_angle_bracket = function(str){
+		return str.lastIndexOf('>') < str.lastIndexOf('<');
+	};
+
+	var is_there_no_angle_bracket = function(str){
+		//only -1
+		return str.lastIndexOf('>') == str.lastIndexOf('<');
+	};
+	
 	var defaultOption = {
 		OffForIE: false // If IE, turn off plugin.
 	};
@@ -79,16 +92,3 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 		addWordBreakKeepAll(this);
 	});
 };
-
-function is_there_end_angle_bracket(str){
-	return str.lastIndexOf('<') < str.lastIndexOf('>');
-}
-
-function is_there_start_angle_bracket(str){
-	return str.lastIndexOf('>') < str.lastIndexOf('<');
-}
-
-function is_there_no_angle_bracket(str){
-	//only -1
-	return str.lastIndexOf('>') == str.lastIndexOf('<');
-}
