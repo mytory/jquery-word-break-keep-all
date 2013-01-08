@@ -1,6 +1,6 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.2.2
+ * ver 1.2.3
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -49,7 +49,7 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 			
 			var html = $(obj).html();
 			//줄바꿈 보존을 위한 처리
-			html = html.replace(/(\r\n|\n|\r)/gm, '<<<<<>>>>>');
+			html = html.replace(/(\r\n|\n|\r)/gm, ' ＃＆＊＠§ ');
 			// .html() 로 집어 넣었을 때, 여는 태그만 있으면 브라우저가 자동으로 닫는 태그를 집어 넣기 때문에 <,>를 다 없앤다.
 			var textArr = html.split(' ');
 			//빈 배열 제거
@@ -72,7 +72,7 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 				 * skip = true 로 변경하는 경우 : 지금 태그가 열린 경우
 				 * skip = false 로 변경하는 경우 : 지금 태그가 닫힌 경우
 				 */
-				if(skip == false && is_there_no_angle_bracket(str)){
+				if(skip == false && is_there_no_angle_bracket(str) &&  str.indexOf('＃＆＊＠§') == -1 ){
 					full_str += '<span style="white-space: nowrap">'+str+'</span> ';
 				}else{
 					full_str += str + ' ';
@@ -85,7 +85,7 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 					skip = false;
 				}
 			};
-			$(obj).html(full_str.replace(/<<<<<>>>>>/g, "\n"));
+			$(obj).html(full_str.replace(/＃＆＊＠§/g, "\n"));
 		};
 	}
 	return this.each(function(){
