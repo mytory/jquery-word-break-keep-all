@@ -1,15 +1,15 @@
 /*!
  * jQuery word-break keep-all Plugin
- * ver 1.2.3
+ * ver 1.3.0
  *
  * Copyright 2012, Ahn Hyoung-woo (mytory@gmail.com)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
- * http://code.google.com/p/jquery-word-break-keep-all-plugin/
+ * https://github.com/mytory/jquery-word-break-keep-all
  * http://mytory.co.kr/archives/2801
  *
- * Date: 2013-01-07
+ * Date: 2013-09-04
  */
 
 jQuery.fn.wordBreakKeepAll = function(option) {
@@ -27,32 +27,34 @@ jQuery.fn.wordBreakKeepAll = function(option) {
 	};
 	
 	var defaultOption = {
-		OffForIE: false // If IE, turn off plugin.
+		OffForIE: false, // If IE, turn off plugin.
+		useCSSonIE: true // on IE, use CSS word-break: keep-all
 	};
 
 	var opt = $.extend(defaultOption,option);
 
-	if( /MSIE/.test(navigator.userAgent) ){
+	if( /MSIE/.test(navigator.userAgent) && opt.OffForIE == false && opt.useCSSonIE == true){
 		var addWordBreakKeepAll = function(obj){
-			if(opt.OffForIE == false){
-				$(obj).css({
-					'word-break': 'keep-all',
-					'word-wrap': 'break-word'
-				});
-				if($(obj).css('display') == 'inline'){
-					$(obj).css('display','block');
-				}
+			$(obj).css({
+				'word-break': 'keep-all',
+				'word-wrap': 'break-word'
+			});
+			if($(obj).css('display') == 'inline'){
+				$(obj).css('display','block');
 			}
 		};
-	}else{
+	}else if( ! /MSIE/.test(navigator.userAgent) || /MSIE/.test(navigator.userAgent) && opt.OffForIE == false && opt.useCSSonIE == false ){
 		var addWordBreakKeepAll = function(obj){
 			
 			var html = $(obj).html();
-			//줄바꿈 보존을 위한 처리
+			
+			// to store line break
 			html = html.replace(/(\r\n|\n|\r)/gm, ' ＃＆＊＠§ ');
+			
 			// .html() 로 집어 넣었을 때, 여는 태그만 있으면 브라우저가 자동으로 닫는 태그를 집어 넣기 때문에 <,>를 다 없앤다.
 			var textArr = html.split(' ');
-			//빈 배열 제거
+			
+			// remove empty array
 			textArr = textArr.filter(function(e){return e;});
 			$(obj).text('');
 			var skip = false;

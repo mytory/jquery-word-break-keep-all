@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <title>jQuery word-break:keep-all Plugin</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="jquery.word-break-keep-all.js"></script>
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script type="text/javascript" src="jquery.word-break-keep-all.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	//이 한 줄로 실행한다.
 	$('.test').wordBreakKeepAll();
 
 	//IE에서는 플러그인을 사용하지 않고 CSS로 처리하고 싶은 경우 이렇게 옵션을 주면 된다.
-	//$('.test').wordBreakKeepAll({OffForIE:true}); 
+	//$('.test').wordBreakKeepAll({OffForIE: true});
+
+	//IE에서 플러그인을 사용하되 CSS를 적용하는 게 아니라 비 IE 브라우저처럼 적용하고 싶을 때 이렇게 옵션을 준다.
+	//$('.test').wordBreakKeepAll({useCSSonIE: false});
 });
 </script>
 <style type="text/css">
@@ -66,7 +67,7 @@ ul{
 </style>
 </head>
 <body>
-	<h1>jQuery word-break: keep-all 플러그인 ver 1.2.3 Demo</h1>
+	<h1>jQuery word-break: keep-all 플러그인 ver 1.3.0 Demo</h1>
 	<div class="buttons">
 		<p>아래 버튼을 이용해 가로를 50px씩 늘리고 줄이면서 단어별로 끊어지는지 테스트해 보세요.</p>
 		<input type="button" value="+50px" id="plus"/>
@@ -104,8 +105,12 @@ ul{
 &lt;script type="text/javascript"&gt;
 $(document).ready(function(){
 	$('.target').wordBreakKeepAll();
+
 	//IE에서는 플러그인을 사용하지 않고 CSS로 처리하고 싶은 경우 이렇게 옵션을 주면 된다.
 	//$('.test').wordBreakKeepAll({OffForIE:true}); 
+
+	//IE에서 플러그인을 사용하되 CSS를 적용하는 게 아니라 비 IE 브라우저처럼 적용하고 싶을 때 이렇게 옵션을 준다.
+	//$('.test').wordBreakKeepAll({useCSSonIE: false});
 });
 &lt;/script&gt;</code></pre>
 		<h2>플러그인 기타 정보 (etc)</h2>
@@ -151,9 +156,6 @@ $(document).ready(function(){
 	
 	//안에 html 요소가 있을 때 에러 안 나는지 테스트.
 	$('.has-html-test').wordBreakKeepAll();
-	
-	//code highlight
-	hljs.initHighlightingOnLoad();
 	</script>
 </body>
 </html>
