@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>jQuery word-break:keep-all Plugin</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="jquery.word-break-keep-all.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -119,12 +119,11 @@ $(document).ready(function(){
 		</div>
 		<ul>
 			<li>저작권은 jQuery와 같습니다. (License is <a href="http://jquery.org/license">http://jquery.org/license</a>) 카피라이트 헤더에만 손대지 않으면 상업용·개인용 다 무료입니다.</li>
-			<li><a href="http://code.google.com/p/jquery-word-break-keep-all-plugin/">프로젝트 홈(Google Code)</a></li>
-			<li><a href="http://code.google.com/p/jquery-word-break-keep-all-plugin/source/list">변경 이력(Changelog)</a></li>
-			<li><a href="http://code.google.com/p/jquery-word-break-keep-all-plugin/issues/entry">오류를 보고해 주세요! (Please report error!)</a></li>
+			<li><a href="https://github.com/mytory/jquery-word-break-keep-all">프로젝트 홈(github)</a></li>
+			<li><a href="https://github.com/mytory/jquery-word-break-keep-all/issues">오류를 보고해 주세요! (Please report error!)</a></li>
 			<li>인터넷 익스플러로의 경우 단어별로 줄바꿈을 하게 하는 CSS 프로퍼티가 있습니다. <code>span</code>, <code>a</code> 같은 <code>display: inline</code> 요소는 <code>display:block</code>으로 만든 후 <code>word-break: keep-all; word-wrap: break-word;</code>를 인라인 스타일로 추가해 줍니다.</li>
 			<li>나머지 브라우저의 경우 안의 단어들을 단어별로 <code>span</code> tag로 감싼 후 <code>white-space: nowrap;</code>을 인라인 스타일로 줘서 단어가 끊어지지 않게 합니다.</li>
-			<li class="has-html-test"><a href="http://mytory.co.kr/archives/2801">제작동기와 더 자세한 CSS 원리 설명</a>은 블로그에 있습니다.</li>
+			<li class="has-html-test"><a href="http://mytory.net/archives/2801">제작동기와 더 자세한 CSS 원리 설명</a>은 블로그에 있습니다.</li>
 			<li class="has-html-test">Tested in IE7-9,Chrome20,FF12 (이건 폼으로;; IE6는 윈7이라 테스트하기 넘 힘들다. 근데 이제 IE6는 테스트 안 해도 되겠지?)</li>
 			<li>ver 1.2 부터 안에 태그가 있어도 작동합니다. 하지만 안에 태그가 없는 요소에 사용할 때 가장 훌륭하게 작동합니다. &lt;, &gt; 를 태그 외에 텍스트에 사용하지 않도록 주의하세요. 그런 경우 제대로 작동하지 않습니다.
 				예컨대, 태그에서 <code>&lt;레프트21&amp;gt;</code> 이렇게 쓰는 경우 브라우저는 <레프트21&gt;이라고 제대로 렌더링하지만 이 플러그인은 오작동하게 됩니다.</li>
