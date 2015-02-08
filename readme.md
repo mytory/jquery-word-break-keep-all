@@ -1,21 +1,21 @@
 jQuery `word-break: keep-all` plugin
 ====================================
 
-Not in latin letter, break line by a word, not a letter. This is like CSS `word-break: keep-all` property that only be in IE.
+This plugin prevents line breaks from occuring in the middle of a word, especially for text in CJK character sets. Although IE supports the `word-break: keep-all` property that takes care of this problem, other browsers seem to recognize each individual CJK character as a word, not preserving grouped characters that consist a word.
 
 <span style="font-size: 2em">[▶Demo](http://dl.dropboxusercontent.com/u/15546257/code/jquery-word-break-keep-all-plugin/example.html)</span>
 
-Sometimes, linebreak is like below.
+For example, line breaks often occur as shown below.
 
     이명박과 마힌드라가 22명을 죽
     였다.
 
-What we want is below. Not above. ('죽였다' is a word.)
+What we want is the following and not the above. (In this example, '죽였다' is a word.)
 
     이명박과 마힌드라가 22명을
     죽였다.
 
-This plugin is for it. IE has CSS property `word-break: keep-all;` but other browser has not. So I made jQuery plugin.
+This plugin is a javascript solution in the form of a jQuery plugin that mimicks IE's `word-break: keep-all;` behavior in other browsers.
 
 Usage
 -----
@@ -27,11 +27,11 @@ Usage
       // run
       $('.test').wordBreakKeepAll();
 
-      // if IE, off this plugin.
+      // Prevent running plugin in IE.
       // IE에서는 플러그인을 사용하지 않고 CSS로 처리하고 싶은 경우 이렇게 옵션을 주면 된다.
       //$('.test').wordBreakKeepAll({OffForIE: true});
 
-      // On IE, if you want to apply js type, not CSS, set option like below.
+      // Force non-CSS application in IE.
       // IE에서 플러그인을 사용하되 CSS를 적용하는 게 아니라 비 IE 브라우저처럼 적용하고 싶을 때 이렇게 옵션을 준다.
       //$('.test').wordBreakKeepAll({useCSSonIE: false});
     });
