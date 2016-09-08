@@ -1,6 +1,13 @@
 jQuery `word-break: keep-all` plugin
 ====================================
 
+Notice
+------
+
+Current, all modern browser supports `word-break: keep-all` CSS property([ref](http://caniuse.com/#search=keep-all)). So, you need this plugin only when support legacy browser.
+
+------
+
 Not in latin letter, break line by a word, not a letter. This is like CSS `word-break: keep-all` property that only be in IE.
 
 <span style="font-size: 2em">[▶Demo](http://dl.dropboxusercontent.com/u/15546257/code/jquery-word-break-keep-all-plugin/example.html)</span>
