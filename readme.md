@@ -10,7 +10,7 @@ Current, all modern browser supports `word-break: keep-all` CSS property([ref](h
 
 Not in latin letter, break line by a word, not a letter. This is like CSS `word-break: keep-all` property that only be in IE.
 
-<span style="font-size: 2em">[▶Demo](http://dl.dropboxusercontent.com/u/15546257/code/jquery-word-break-keep-all-plugin/example.html)</span>
+<span style="font-size: 2em">[▶Demo](https://mytory.net/uploads/code/jquery-word-break-keep-all-plugin/example.html)</span>
 
 Sometimes, linebreak is like below.
 
@@ -46,8 +46,8 @@ Usage
 
 영어가 아닌 문자에서, 글자별로 줄바꿈하는 것이 아니라 단어별로 줄바꿈을 하도록 한다. CSS의 `word-break: keep-all`처럼 작동을 한다. 이 프로퍼티는 IE에만 있다.
 
-<span style="font-size: 2em">[▶데모 보기](http://dl.dropboxusercontent.com/u/15546257/code/jquery-word-break-keep-all-plugin/example.html)</span> | 
-<span style="font-size: 2em">[▶개발 동기 보기](http://mytory.net/archives/2801)</span>
+<span style="font-size: 2em">[▶데모 보기](https://mytory.net/uploads/code/jquery-word-break-keep-all-plugin/example.html)</span> | 
+<span style="font-size: 2em">[▶개발 동기 보기](https://mytory.net/archives/2801)</span>
 
 포스트 제목 등에서 줄바꿈이 아래처럼 되는 경우가 있다.
 
